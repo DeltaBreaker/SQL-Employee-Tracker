@@ -9,7 +9,7 @@ class Prompt {
     }
 
     // This must be overriden
-    async prompt(response) {
+    async prompt() {
         throw new Error("Method must be overridden");
     }
 

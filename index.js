@@ -1,4 +1,4 @@
-const INPUT = require("inquirer");
+const Input = require("inquirer");
 const PROMPT_PATH = "./src/prompt/child/";
 const PROMPTS = [];
 const CHOICES = [];
@@ -6,7 +6,7 @@ const CHOICES = [];
 async function main() {
     let continuePrompt = true;
     while(continuePrompt) {
-        await INPUT.prompt({
+        await Input.prompt({
             type: "list",
             message: "Select an option below:",
             choices: CHOICES,

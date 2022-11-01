@@ -1,9 +1,9 @@
 const Prompt = require("../Prompt.js");
 const SQLManager = require("../../SQLManager.js");
 const tableFormat = require("console.table");
-const CHOICE = "View All Departments";
+const CHOICE = "View All Roles";
 
-class ViewDepartments extends Prompt {
+class ViewRoles extends Prompt {
     constructor() {
         super(CHOICE);
     }
@@ -13,4 +13,4 @@ class ViewDepartments extends Prompt {
     }
 }
 
-module.exports = ViewDepartments;
+module.exports = ViewRoles;
