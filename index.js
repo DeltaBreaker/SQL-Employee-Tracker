@@ -1,4 +1,5 @@
 const Input = require("inquirer");
+const SQLManager = require("./src/SQLManager.js");
 const PROMPT_PATH = "./src/prompt/child/";
 const PROMPTS = [];
 const CHOICES = [];
@@ -15,6 +16,7 @@ async function main() {
             continuePrompt = await PROMPTS[response.choice].prompt();
         });
     }
+    SQLManager.close();
 }
 
 function setup() {

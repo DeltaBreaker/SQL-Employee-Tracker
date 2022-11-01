@@ -18,7 +18,12 @@ async function readFromDatabase(request, args) {
   return rows;
 }
 
+function close() {
+  DATABASE.end();
+}
+
 module.exports = {
   writeToDataBase: writeToDatabase,
-  readFromDatabase: readFromDatabase
+  readFromDatabase: readFromDatabase,
+  close: close
 }
