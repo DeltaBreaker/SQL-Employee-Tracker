@@ -1,0 +1,7 @@
+class Prompt {
+
+    constructor(question) {
+
+    }
+
+}
