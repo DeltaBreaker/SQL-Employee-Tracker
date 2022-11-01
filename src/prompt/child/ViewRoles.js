@@ -9,7 +9,7 @@ class ViewRoles extends Prompt {
     }
 
     async prompt() {
-        let results = await SQLManager.readFromDatabase("SELECT roles.id, roles.role, departments.name AS department, roles.salary FROM roles JOIN departments ON roles.department = departments.id");
+        let results = await SQLManager.readFromDatabase("SELECT roles.id, roles.title, departments.name AS department, roles.salary FROM roles JOIN departments ON roles.department = departments.id");
         console.table(results);
         return true;
     }
