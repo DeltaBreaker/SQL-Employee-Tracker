@@ -15,6 +15,7 @@ class AddRole extends Prompt {
                 value: i.id
             }
         });
+        
         await Input.prompt([
             {
                 type: "input",
