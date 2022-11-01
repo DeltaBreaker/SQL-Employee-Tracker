@@ -14,7 +14,7 @@ class ViewEmployees extends Prompt {
             "FROM employees employee " +
             "JOIN roles ON roles.id = employee.role_id " +
             "JOIN departments ON roles.department = departments.id "+
-            "LEFT OUTER JOIN employees manager ON employee.manager = manager.id"
+            "LEFT OUTER JOIN employees manager ON employee.manager = manager.id;"
             );
         console.table(results);
         return true;

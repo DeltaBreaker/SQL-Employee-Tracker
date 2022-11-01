@@ -15,7 +15,7 @@ class AddDepartment extends Prompt {
             name: "title"
         }).then(async (response) => {
             await SQLManager.queryDatabase(
-                "INSERT INTO departments(title, salary, department) VALUES(?)",
+                "INSERT INTO departments(name) VALUES(?);",
                 response.title
             );
             console.log("Added " + response.title + " to the departments table.");

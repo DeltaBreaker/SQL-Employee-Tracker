@@ -15,7 +15,7 @@ class AddRole extends Prompt {
                 value: i.id
             }
         });
-        
+
         await Input.prompt([
             {
                 type: "input",
@@ -35,7 +35,7 @@ class AddRole extends Prompt {
             }
         ]).then(async function(response) {
             await SQLManager.queryDatabase(
-                "INSERT INTO roles(title, salary, department) VALUES(?, ?, ?)",
+                "INSERT INTO roles(title, salary, department) VALUES(?, ?, ?);",
                 [response.title, response.salary, response.department]
             );
             console.log("Added " + response.title + " to the roles table.");

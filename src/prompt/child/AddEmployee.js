@@ -15,7 +15,7 @@ class AddEmployee extends Prompt {
                 value: i.id
             }
         });
-        
+
         let employees = (await SQLManager.queryDatabase("SELECT * FROM employees")).map((i) => {
             return {
                 name: i.first_name + " " + i.last_name,
@@ -52,7 +52,7 @@ class AddEmployee extends Prompt {
             }
         ]).then(async (response) => {
             await SQLManager.queryDatabase(
-                "INSERT INTO employees(first_name, last_name, role_id, manager) VALUES(?, ?, ?, ?)",
+                "INSERT INTO employees(first_name, last_name, role_id, manager) VALUES(?, ?, ?, ?);",
                 [
                     response.firstName,
                     response.lastName,
