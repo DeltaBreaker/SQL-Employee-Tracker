@@ -22,4 +22,4 @@ VALUES ("Tony", "Stark", 1, 6),
        ("Natasha", "Romanoff", 5, 6),
        ("Clint", "Barton", 7, 6),
        ("Bruce", "Banner", 1, 6),
-       ("Nick", "Fury", 8, 6);
+       ("Nick", "Fury", 8, NULL);

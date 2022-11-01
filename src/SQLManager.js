@@ -9,11 +9,7 @@ const DATABASE = SQL.createConnection({
     console.log(`Connected to the ${DATABASE_NAME} database.`)
 );
 
-async function writeToDatabase() {
-
-}
-
-async function readFromDatabase(request, args) {
+async function queryDatabase(request, args) {
   let [rows] = await DATABASE.promise().query(request, args);
   return rows;
 }
@@ -23,7 +19,6 @@ function close() {
 }
 
 module.exports = {
-  writeToDataBase: writeToDatabase,
-  readFromDatabase: readFromDatabase,
+  queryDatabase: queryDatabase,
   close: close
 }

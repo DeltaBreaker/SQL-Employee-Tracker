@@ -9,12 +9,12 @@ class ViewEmployees extends Prompt {
     }
 
     async prompt() {
-        let results = await SQLManager.readFromDatabase(
+        let results = await SQLManager.queryDatabase(
             "SELECT employee.id, employee.first_name, employee.last_name, roles.title, departments.name AS department, roles.salary, concat(manager.first_name, ' ', manager.last_name) AS manager " +
-            "FROM employees employee" +
+            "FROM employees employee " +
             "JOIN roles ON roles.id = employee.role_id " +
             "JOIN departments ON roles.department = departments.id "+
-            "JOIN employees manager ON employee.manager = manager.id"
+            "LEFT OUTER JOIN employees manager ON employee.manager = manager.id"
             );
         console.table(results);
         return true;

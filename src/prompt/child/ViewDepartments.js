@@ -9,7 +9,7 @@ class ViewDepartments extends Prompt {
     }
 
     async prompt() {
-        let results = await SQLManager.readFromDatabase("SELECT * FROM departments");
+        let results = await SQLManager.queryDatabase("SELECT * FROM departments");
         console.table(results);
         return true;
     }
